@@ -20,8 +20,8 @@ function onLoad() {
 function addClasses() {
   const elementoSeleccionado = document.getElementsByClassName("selected")[0];
   const list = elementoSeleccionado.parentNode.parentNode;
-  const ninos = [...list.children];
-  ninos.forEach((child, index) => {
+  const hijos = [...list.children];
+  hijos.forEach((child, index) => {
     targetElement = child.firstChild;
     targetElement.classList.add("element-" + (index + 1));
   });
@@ -36,15 +36,15 @@ function removeElements() {
 }
 
 function generateList() {
-  const primeraListaNinos = [...document.getElementById("list1").children];
+  const primeraListaHijos = [...document.getElementById("list1").children];
   const siguienteLista = document.getElementById("list2");
 
-  primeraListaNinos.forEach(el => {
-    const elNino = el.firstChild;
+  primeraListaHijos.forEach(el => {
+    const elHijo = el.firstChild;
     const item = document.createElement("li");
     const boton = document.createElement("button");
-    const text = document.createTextNode(elNino.textContent);
-    boton.className = elNino.className;
+    const text = document.createTextNode(elHijo.textContent);
+    boton.className = elHijo.className;
     boton.appendChild(text);
     item.appendChild(boton);
     siguienteLista.appendChild(item);
